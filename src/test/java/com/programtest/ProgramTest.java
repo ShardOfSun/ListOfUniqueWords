@@ -1,14 +1,32 @@
 package test.java.com.programtest;
 
-import main.java.com.listofsubstring.ListStrings;
-import main.java.com.listofsubstring.ListSubstrings;
 
+import main.java.com.listofsubstring.ListStrings;
+import main.java.com.listofsubstring.ListStringsGUI;
+
+import javax.swing.*;
 import java.util.Scanner;
 
 public class ProgramTest {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
+        while (true) {
+            System.out.println("Show with interface? (y/n)");
+            switch (scanner.nextLine()) {
+                case "y" -> listStringGUITest();
+                case "n" -> listStringTest();
+                default -> {
+                    System.out.println("Incorrect input!");
+                    continue;
+                }
+            }
+            break;
+        }
+    }
+
+    private static void listStringTest() {
         ListStrings listStrings = new ListStrings();
-        Scanner scanner = new Scanner(System.in);
         listStrings.loadFromFile("ListOfSubstrings/src/resourse/Strings.txt");
 
         System.out.println("Enter a substring to search for (case sensitive): ");
@@ -21,5 +39,14 @@ public class ProgramTest {
         } else {
             System.out.println("No matches found.");
         }
+    }
+
+    private static void listStringGUITest() {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new ListStringsGUI();
+            }
+        });
     }
 }
