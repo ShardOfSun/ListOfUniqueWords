@@ -1,0 +1,20 @@
+Hello, world!
+Welcome to OpenAI!
+This is a simple test.
+Hello again, world!
+Sample text for testing.
+Another hello world example.
+Java programming can be fun.
+Let's code and test.
+End of the example list.
+Using strings in Java.
+Example with substring.
+Finding substrings is useful.
+Practice makes perfect.
+Explore new programming techniques.
+Always look for efficient solutions.
+Testing with multiple examples.
+Understand the importance of substrings.
+Keep coding to improve skills.
+Substring search can be optimized.
+This list should be enough for testing.

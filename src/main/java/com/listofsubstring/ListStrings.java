@@ -18,7 +18,7 @@ public class ListStrings {
         }
     }
 
-    public void add(String data) {
+    private void add(String data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -39,8 +39,8 @@ public class ListStrings {
         }
     }
 
-    public void loadFromFile(String filename) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+    public void loadFromFile(String strings) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(strings))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 add(line);
