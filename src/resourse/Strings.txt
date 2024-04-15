@@ -1,5 +1,4 @@
 Hello, world!
-Welcome to OpenAI!
 This is a simple test.
 Hello again, world!
 Sample text for testing.

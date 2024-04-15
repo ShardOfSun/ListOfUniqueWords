@@ -1,5 +1,7 @@
 package main.java.com.listofsubstring;
 
+import main.java.com.listofsubstring.ListSubstrings;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,7 +20,7 @@ public class ListStrings {
         }
     }
 
-    private void add(String data) {
+    public void add(String data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -39,6 +41,19 @@ public class ListStrings {
         }
     }
 
+    public ListStrings search(String substring) {
+        ListStrings resultList = new ListStrings();
+        Node current = head;
+        while (current != null) {
+            if (current.data.contains(substring)) {
+                resultList.add(current.data);
+            }
+            current = current.next;
+        }
+
+        return resultList;
+    }
+
     public void loadFromFile(String strings) {
         try (BufferedReader reader = new BufferedReader(new FileReader(strings))) {
             String line;
@@ -48,5 +63,9 @@ public class ListStrings {
         } catch (IOException e) {
             System.out.println("File reading error: " + e.getMessage());
         }
+    }
+
+    public boolean isEmpty() {
+        return head == null;
     }
 }
