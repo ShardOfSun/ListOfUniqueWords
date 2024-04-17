@@ -41,14 +41,6 @@ public class ListStrings {
         }
     }
 
-    public void printList(Consumer<String> action) {
-        Node current = head;
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
-        }
-    }
-
     public ListStrings search(String substring) {
         ListStrings resultList = new ListStrings();
         Node current = head;
