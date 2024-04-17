@@ -5,6 +5,7 @@ import main.java.com.listofsubstring.ListSubstrings;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.function.Consumer;
 
 public class ListStrings {
 
@@ -17,6 +18,13 @@ public class ListStrings {
         Node(String data) {
             this.data = data;
             this.next = null;
+        }
+    }
+    public void iterateList(Consumer<String> action) {
+        Node current = head;
+        while (current != null) {
+            action.accept(current.data);
+            current = current.next;
         }
     }
 
@@ -33,7 +41,7 @@ public class ListStrings {
         }
     }
 
-    public void printList() {
+    public void printList(Consumer<String> action) {
         Node current = head;
         while (current != null) {
             System.out.println(current.data);

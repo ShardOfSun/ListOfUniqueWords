@@ -27,7 +27,7 @@ public class ProgramTest {
 
     private static void listStringTest() {
         ListStrings listStrings = new ListStrings();
-        listStrings.loadFromFile("ListOfSubstrings/src/resourse/Strings.txt");
+        listStrings.loadFromFile("ListOfSubstrings/src/resource/Strings.txt");
 
         System.out.println("Enter a substring to search for (case sensitive): ");
         String substring = scanner.nextLine();
@@ -35,7 +35,7 @@ public class ProgramTest {
         ListStrings searchResults = listStrings.search(substring);
         if (!searchResults.isEmpty()) {
             System.out.println("Found strings with \"" + substring + "\":");
-            searchResults.printList();
+            searchResults.iterateList(System.out::println);
         } else {
             System.out.println("No matches found.");
         }
